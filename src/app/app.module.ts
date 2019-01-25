@@ -15,6 +15,8 @@ import { ConexionService } from './services/conexion.service';
 import { ListaComponent } from './components/lista/lista.component';
 import { ListaAddComponent } from './components/lista-add/lista-add.component';
 
+// formularios
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { ListaAddComponent } from './components/lista-add/lista-add.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

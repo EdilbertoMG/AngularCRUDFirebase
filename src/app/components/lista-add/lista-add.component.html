@@ -1,3 +1,4 @@
-<p>
-  lista-add works!
-</p>
+<form (ngSubmit)="agregar()">
+    <input type="text" placeholder="Ingresa tu tarea" name="name" class="form-control" [(ngModel)]="item.name" required>
+    <button class="btn btn-primary mt-3">Agregar</button>
+</form>

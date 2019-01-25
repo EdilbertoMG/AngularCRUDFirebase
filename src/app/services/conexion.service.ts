@@ -26,6 +26,9 @@ export class ConexionService {
   }
 
   listaItem(){
-    return this.items;
+    return this.items; // lista los items
+  }
+  agregarItem(item: Item) {
+    this.itemsCollection.add(item); // agrega items a la db
   }
 }

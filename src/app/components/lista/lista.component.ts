@@ -9,6 +9,10 @@ import { ConexionService } from 'src/app/services/conexion.service';
 export class ListaComponent implements OnInit {
 
   items:any; // inventamos una variable vacia
+  //variable tipo objeto vacia para guardar el item a editar
+  editarItem:any = {
+    name: ''
+  }
 
   constructor(private conexion:ConexionService) {
     this.conexion.listaItem().subscribe(item=>{
@@ -19,4 +23,13 @@ export class ListaComponent implements OnInit {
   ngOnInit() {
   }
 
+  eliminar(item){
+    this.conexion.eliminarItem(item); //pasamos el item a eliminar
+  }
+  editar(item){
+    this.editarItem = item;
+  }
+  agregarItemEditado(){
+    this.conexion.editarItem(this.editarItem);
+  }
 }
